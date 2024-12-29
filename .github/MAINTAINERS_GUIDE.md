@@ -93,6 +93,13 @@ A smart plug and Emporia credentials are needed for this to be successful.
 When changes are proposed or made to the remote repository, the full test suite
 is performed to verify stability in any changes.
 
+A [**new self-hosted runner**][runner] with a connected device can be brought
+online to test changes with custom values for variables:
+
+- `EMPORIA_DEVICE`
+- `EMPORIA_USERNAME`
+- `EMPORIA_PASSWORD`
+
 Additionally, some change to the `CHANGELOG.md` is checked for on pull requests.
 
 ## Updating the wiki
@@ -204,5 +211,6 @@ $ spctl -a -vvv -t install ./etime
 [learn_go]: https://go.dev/learn/
 [nix]: https://zero-to-nix.com
 [releases]: https://github.com/zimeg/emporia-time/releases
+[runner]: https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/adding-self-hosted-runners
 [semver]: https://semver.org/spec/v2.0.0.html
 [wiki]: https://github.com/zimeg/emporia-time/wiki

@@ -29,11 +29,6 @@
             go mod tidy
           '';
         };
-        devShells.gh = pkgs.mkShell {
-          packages = with pkgs; [
-            github-runner
-          ];
-        };
         devShells.gon =
           if pkgs.stdenv.isDarwin then
             pkgs.mkShell
