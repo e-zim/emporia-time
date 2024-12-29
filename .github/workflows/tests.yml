@@ -46,16 +46,18 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v16
       - name: Clean the environment
         run: nix develop -c make clean
-      - name: Prepare the program
-        run: nix develop -c make build
       - name: Sleep for a short while
-        run: ./etime sleep 4
+        run: |
+          nix develop .#tom
+          nix run . -- sleep 4
         env:
           EMPORIA_DEVICE: ${{ secrets.EMPORIA_DEVICE }}
           EMPORIA_USERNAME: ${{ secrets.EMPORIA_USERNAME }}
           EMPORIA_PASSWORD: ${{ secrets.EMPORIA_PASSWORD }}
       - name: Sleep for a bit longer
-        run: ./etime sleep 12
+        run: |
+          nix shell nixpkgs#time
+          nix run . -- sleep 12
         env:
           EMPORIA_DEVICE: ${{ secrets.EMPORIA_DEVICE }}
           EMPORIA_USERNAME: ${{ secrets.EMPORIA_USERNAME }}

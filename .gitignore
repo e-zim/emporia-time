@@ -1,6 +1,7 @@
 # Built binaries
 /etime
 dist/*
+result
 
 # Development leftovers
 *.swp

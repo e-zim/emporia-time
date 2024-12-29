@@ -13,6 +13,7 @@ to [Semantic Versioning][semver].
 - Wait until tests pass before merging updates to dependencies
 - Find missing references that the above changes might expect
 - Check that upstream merges do not let dependencies skip test
+- Package the build in a flake and test with propogated timing
 
 ## [1.1.1] - 2024-09-08
 
